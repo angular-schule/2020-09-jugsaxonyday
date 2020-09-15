@@ -1,0 +1,13 @@
+<div class="card mb-5">
+  <h5 class="card-header">
+    🛒 Warenkorb
+    <span class="float-right">{{ totalValue | currency:'EUR' }}</span>
+  </h5>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" *ngIf="!books.length"><strong>Keine Bücher im Warenkorb.</strong></li>
+    <li class="list-group-item" *ngFor="let b of books">
+      {{ b.title }}
+      <span class="float-right">{{ b.price | currency:'EUR' }}</span>
+    </li>
+  </ul>
+</div>
