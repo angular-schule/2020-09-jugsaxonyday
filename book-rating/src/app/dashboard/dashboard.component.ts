@@ -10,6 +10,7 @@ import { getStaticBookList } from '../shared/book-data';
 export class DashboardComponent implements OnInit {
 
   books: Book[];
+  cart: Book[] = [];
 
   constructor() { }
 
@@ -18,7 +19,8 @@ export class DashboardComponent implements OnInit {
   }
 
   addToCart(book: Book): void {
-    console.log(book);
+    // this.cart.push(book);
+    this.cart = [...this.cart, book];
   }
 
 }
