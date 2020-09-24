@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Book } from '../shared/book';
 import { getStaticBookList } from '../shared/book-data';
+import { BookStoreService } from '../shared/book-store.service';
 
 @Component({
   selector: 'br-dashboard',
@@ -12,10 +13,11 @@ export class DashboardComponent implements OnInit {
   books: Book[];
   cart: Book[] = [];
 
-  constructor() { }
+  constructor(private bs: BookStoreService) { }
 
   ngOnInit(): void {
-    this.books = getStaticBookList();
+    this.bs.getAll()
+      .subscribe(books => this.books = books);
   }
 
   addToCart(book: Book): void {
