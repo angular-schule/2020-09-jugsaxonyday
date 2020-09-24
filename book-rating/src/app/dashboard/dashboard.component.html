@@ -1,1 +1,4 @@
-<br-book *ngFor="let b of books" [book]="b"></br-book>
+<br-book
+  (cartAdd)="addToCart($event)"
+  *ngFor="let b of books"
+  [book]="b"></br-book>

@@ -17,4 +17,8 @@ export class DashboardComponent implements OnInit {
     this.books = getStaticBookList();
   }
 
+  addToCart(book: Book): void {
+    console.log(book);
+  }
+
 }
